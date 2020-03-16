@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="animi.js"></script>
+<script src="jquery.min.js"></script>
+ <link rel="icon"  href="fevi.png">
+
+<style type="text/css">
+	body{
+		margin:0px auto;
+		padding: 0px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 600;
+	}
+	/*#text-center{
+		padding: 10px;
+		background: #1eaaf1 !important;
+		font-weight: bold;
+		margin-right: 10px;
+		margin-top: 10px;
+		color: #fff;
+	}*/
+canvas{
+	margin-top: 10px;
+}
+button{
+	margin-top: 40px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+	<div class="row">
+	<div class="col-md-2 col-xs-2 text-center" id="text-center" class="SR">
+		<button  style="background:#fff;border:2px solid red;opacity: 0;height:100px;width:100px;margin-left: 250px;position: fixed;top:300px;" type="button" class="yen btn text-center" >
+		</button>
+	</div>
+	<div class="col-md-2 col-xs-2">
+		<button onclick="ara1()" id="first" type="button" class="btn btn-primary top" style="font-weight: bold;" title="Draw Rectangle">
+		Draw</button>
+	</div>
+	<div class="col-md-2 col-xs-2"  class="draw">
+		<button  onclick="ara2()" id="second" type="button" class="btn btn-success second mid" disabled style="font-weight: bold;" title="Shift Right">
+		Shift Right</button>
+	</div>
+	<div class="col-md-2 col-xs-2"  class="draw">
+		<button   onclick="ara3()" id="second" type="button" class="btn btn-primary second mid" disabled style="opacity: 2!important;font-weight: bold;" title="Shift Left">  
+		 Shift Left</button></div>
+	<div class="col-md-2 col-xs-2" id="text-center" class="SR" style="font-weight: bold;">
+		<button  title="Deleted" onclick="ara4()" type="button" class="btn btn-success second del" disabled style="font-weight: bold;" title="Delete">
+		Delete</button>
+	</div>
+	<div class="col-md-2 text-center" id="text-center" class="SR">
+	</div>
+</div>
+	<div class="col-md-12 text-center">
+	<canvas  id="canvas" style="width:100%;height:100%;border:1px solid #000000;">
+	<!-- <img id="scream" height="100" width="100" class="img-responsive" src="https://www.karomi.com/wp-content/uploads/2018/12/karomi-logo-NO-TAG.png" alt="The Scream"> -->
+
+	</canvas>
+	</div>
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#first").click(function(){
+// alert("Hello! I am an alert box!!");
+    $(".second").attr("disabled", false);
+  });
+    });
+
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".del").click(function(){
+// alert("Hello! I am an alert box!!");
+    $(".top").attr("disabled", false);
+    $(".mid").attr("disabled", true);
+  });
+    });
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".mid").click(function(){
+// alert("Hello! I am an alert box!!");
+    $(".top").attr("disabled", true);
+  });
+    });
+
+</script>
+<script type="text/javascript">
+	function ara1(){
+		anime({
+  targets: '.yen',
+  // translateY: 320,
+//  duration: 3000,
+  //easing: 'linear',
+	opacity:5,
+});
+	}
+
+</script>
+
+
+
+<script type="text/javascript">
+	function ara2(){
+		anime({
+  targets: '.yen',
+  translateX: [0,250],
+  duration: 2000,
+  easing: 'linear',
+	opacity:5,
+
+});
+	}
+
+</script>
+
+<script type="text/javascript">
+	function ara3(){
+		anime({
+  targets: '.yen',
+  translateX: -10,
+  duration: 2000,
+  easing: 'linear',
+	opacity:5,
+});
+	}
+
+</script>
+
+<script type="text/javascript">
+	function ara4(){
+		anime({
+  targets: '.yen',
+ 
+
+opacity:0,
+
+});
+	}
+
+</script>
+
+</body>
+</html>
